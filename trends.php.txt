@@ -1,0 +1,40 @@
+<?php
+// base_control.htmlإستقبال البيانات القادمة من الحقول في صفحة 
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+$top = $_POST["top"];
+$left = $_POST["left"];
+$right = $_POST["right"];
+$down = $_POST["down"];
+$stop=["stop"];
+
+}
+
+// معلومات الإتصال بقاعدة البيانات
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "base_control";
+
+
+// إنشاء الإتصال
+
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+// إختبار الإتصال
+if (!$conn) {
+die("Connection failed: " . mysqli_connect_error());
+}
+$_POST['save'];
+$sql = "INSERT INTO mytable (top,left,right,down,stop)
+VALUES ('$top ','$left ','$right','$down','$stop')";
+
+if (mysqli_query($conn, $sql)) {
+echo "تم إرسال معلومات بنجاح";
+} else {
+echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+}
+
+mysqli_close($conn);
+
+?>
