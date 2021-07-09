@@ -1,0 +1,2 @@
+# base-control
+A page has been created and contains a header and has the logo of the Smart Methods Company and the references for the company’s website. Then, the base control page has been created and buttons have been placed in it to move forward, back, right, left and the stop button, as well as a box to move to the arm control page. Then the chat assistant worked with the robot and it was linked with base_control.html page After that, I linked it to the database on trends.php . page All mission pages in html are linked to one page in css And its name is task1.css
